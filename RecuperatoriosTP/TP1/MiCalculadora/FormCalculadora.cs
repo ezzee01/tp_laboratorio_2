@@ -44,8 +44,15 @@ namespace MiCalculadora
         {
             Numero num1 = new Numero(numero1);
             Numero num2 = new Numero(numero2);
+            char aux = ' ';
 
-            return Calculadora.Operar(num1, num2, operador);
+            if (char.TryParse(operador , out aux))
+            {
+                return Calculadora.Operar(num1, num2, aux);
+            }
+            else return Calculadora.Operar(num1, num2, aux);
+
+
         }
 
 
@@ -106,6 +113,21 @@ namespace MiCalculadora
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void FormCalculadora_Load(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rta = MessageBox.Show("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (rta == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

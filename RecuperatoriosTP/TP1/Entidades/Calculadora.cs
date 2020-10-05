@@ -15,29 +15,25 @@ namespace Entidades
         /// <param name="numero2">Segundo numero</param>
         /// <param name="operador">Operación</param>
         /// <returns></returns>
-        public static double Operar(Numero numero1, Numero numero2, string operador)
+        public static double Operar(Numero numero1, Numero numero2, char operador)
         {
             double resultado = 0;
-            char operadorChar;
 
-            if (char.TryParse(operador, out operadorChar))
+            switch (ValidarOperador(operador))
             {
-                switch (ValidarOperador(operadorChar))
-                {
-                    case "+":
-                        resultado = numero1 + numero2;
+                case "+":
+                    resultado = numero1 + numero2;
 
-                        break;
-                    case "-":
-                        resultado = numero1 - numero2;
-                        break;
-                    case "*":
-                        resultado = numero1 * numero2;
-                        break;
-                    case "/":
-                        resultado = numero1 / numero2;
-                        break;
-                }
+                    break;
+                case "-":
+                    resultado = numero1 - numero2;
+                    break;
+                case "*":
+                    resultado = numero1 * numero2;
+                    break;
+                case "/":
+                    resultado = numero1 / numero2;
+                    break;
             }
 
             return resultado;
