@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archivos", "Archivos\Archiv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carranza.Ezequiel.2C.TP3", "Carranza.Ezequiel.2C.TP3\Carranza.Ezequiel.2C.TP3.csproj", "{613D1FF5-1D41-46C7-BC0A-49699E5740EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{12F8036E-170E-433D-9AC9-F4561D35E374}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{613D1FF5-1D41-46C7-BC0A-49699E5740EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{613D1FF5-1D41-46C7-BC0A-49699E5740EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{613D1FF5-1D41-46C7-BC0A-49699E5740EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F8036E-170E-433D-9AC9-F4561D35E374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F8036E-170E-433D-9AC9-F4561D35E374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F8036E-170E-433D-9AC9-F4561D35E374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F8036E-170E-433D-9AC9-F4561D35E374}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
