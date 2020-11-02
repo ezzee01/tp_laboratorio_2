@@ -16,7 +16,7 @@ namespace ClasesInstanciables
             AlDia, Deudor, Becado
         }
 
-        //Constructores
+        /***Constructores***/
 
         public Alumno()
         {
@@ -32,8 +32,12 @@ namespace ClasesInstanciables
             this.estadoCuenta = estadoCuenta;
         }
 
-        //Metodos
+        /***Metodos***/
 
+        /// <summary>
+        /// Muestra todos los datos del alumno. 
+        /// </summary>
+        /// <returns>Devuelve una cadena con todos los datos del alumno.</returns>
         protected override string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -51,6 +55,12 @@ namespace ClasesInstanciables
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Un Alumno será distinto a un EClase sólo si no toma esa clase
+        /// </summary>
+        /// <param name="a">Alumno a comparar.</param>
+        /// <param name="clase">Clase a comparar.</param>
+        /// <returns>Devuelve true si el alumno no toma la clase, sino false.</returns>
         public static bool operator !=(Alumno a, Universidad.EClases clase)
         {
             if (a.claseQueToma != clase)
@@ -60,6 +70,12 @@ namespace ClasesInstanciables
             return false;
         }
 
+        /// <summary>
+        /// Un Alumno será igual a un EClase si toma esa clase y su estado de cuenta no es Deudor.
+        /// </summary>
+        /// <param name="a">Alumno a comparar.</param>
+        /// <param name="clase">Clase a comparar.</param>
+        /// <returns>Devuelve true si el alumno toma la clase y su estado de cuenta es distinto de Deudor, sino false.</returns>
         public static bool operator ==(Alumno a, Universidad.EClases clase)
         {
             if (!(a != clase) && a.estadoCuenta != EEstadoCuenta.Deudor)
@@ -69,11 +85,19 @@ namespace ClasesInstanciables
             return false;
         }
 
+        /// <summary>
+        /// Muestra la clase que toma el alumno.
+        /// </summary>
+        /// <returns>Devuelve una cadena "TOMA CLASE DE" junto al nombre de la clase que toma el alumno.</returns>
         protected override string ParticiparEnClase()
         {
             return string.Format("TOMA CLASES DE {0}", this.claseQueToma);
         }
 
+        /// <summary>
+        /// Hace públicos los datos del alumno.
+        /// </summary>
+        /// <returns>Devuelve una cadena con todos los datos del alumno.</returns>
         public override string ToString()
         {
             return this.MostrarDatos();

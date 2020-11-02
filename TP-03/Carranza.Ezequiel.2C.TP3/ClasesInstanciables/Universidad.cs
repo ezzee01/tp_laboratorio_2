@@ -18,6 +18,8 @@ namespace ClasesInstanciables
             Programacion, Laboratorio, Legislacion, SPD
         }
 
+        /***PROPIEDADES***/
+
         public List<Alumno> Alumnos
         {
             get { return this.alumnos; }
@@ -55,6 +57,7 @@ namespace ClasesInstanciables
             }
         }
 
+        /***contructores***/
 
         public Universidad()
         {
@@ -63,8 +66,12 @@ namespace ClasesInstanciables
             this.Alumnos = new List<Alumno>();
         }
 
-        //Metodos
+        /***Metodos***/
 
+        /// <summary>
+        /// Serializa una universidad en formato XML.
+        /// </summary>
+        /// <param name="gim">Universidad a serializar.</param>
         public static bool Guardar(Universidad uni)
         {
             Xml<Universidad> xml = new Xml<Universidad>();
@@ -72,6 +79,10 @@ namespace ClasesInstanciables
             return xml.Guardar("Universidad.xml", uni);
         }
 
+        /// <summary>
+        /// Deserializa una universidad guardada en formato XML.
+        /// </summary>
+        /// <returns>Objeto tipo Universidad con todos los datos guardados en el XML.</returns>
         public static Universidad Leer()
         {
             Universidad retorno;
@@ -82,6 +93,11 @@ namespace ClasesInstanciables
             return retorno;
         }
 
+        /// <summary>
+        /// Genera una cadena con los datos de la universidad.
+        /// </summary>
+        /// <param name="uni">Universidad de la que se quiere mostrar los datos.</param>
+        /// <returns>Cadena con los datos de la universidad.</returns>
         private static string MostrarDatos(Universidad uni)
         {
             StringBuilder sb = new StringBuilder();
@@ -95,6 +111,10 @@ namespace ClasesInstanciables
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Sobrescritura del metodo ToString(); Retorna datos de la universidad.
+        /// </summary>
+        /// <returns>Cadena con los datos de la universidad.</returns>
         public override string ToString()
         {
             return Universidad.MostrarDatos(this);

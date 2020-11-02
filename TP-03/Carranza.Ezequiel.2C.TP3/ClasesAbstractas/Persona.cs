@@ -20,42 +20,56 @@ namespace EntidadesAbstractas
             Argentino, Extranjero
         }
 
-        //propiedades
+        /***PROPIEDADES***/
 
+        /// <summary>
+        /// Establece/Obtiene el Apellido de una Persona (Validado).
+        /// </summary>
         public string Apellido
         {
             get { return this.apellido; }
             set { this.apellido = ValidarNombreApellido(value); }
         }
 
+        /// <summary>
+        /// Establece/Obtiene el DNI de una Persona (Validado).
+        /// </summary>
         public int DNI
         {
             get { return this.dni; }
             set { this.dni = ValidarDni(this.nacionalidad, value); }
         }
 
+        /// <summary>
+        /// Establece/Obtiene la Nacionalidad de una Persona (Validado).
+        /// </summary>
         public ENacionalidad Nacionalidad
         {
             get { return this.nacionalidad; }
             set { this.nacionalidad = value; }
         }
 
+        /// <summary>
+        /// Establece/Obtiene el Nombre de una Persona (Validado).
+        /// </summary>
         public string Nombre
         {
             get { return this.nombre; }
             set { this.nombre = ValidarNombreApellido(value); }
         }
 
+        /// <summary>
+        /// Establece/Obtiene el DNI de una Persona (Validado).
+        /// </summary>
         public string StringToDNI
         {
             set { this.dni = ValidarDni(this.nacionalidad, value); }
         }
 
-        //Constructores
+        /***CONSTRUCTORES***/
 
         public Persona()
         {
-
         }
 
         public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
@@ -75,8 +89,12 @@ namespace EntidadesAbstractas
             this.StringToDNI = dni;
         }
 
-        //Metodos
+        /***METODOS***/
 
+        /// <summary>
+        /// Sobrescritura del metodo ToString Retorna datos de la persona.
+        /// </summary>
+        /// <returns>Nombre completo y nacionalidad de la persona.</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -87,6 +105,14 @@ namespace EntidadesAbstractas
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Valida DNI segun nacionalidad
+        /// Si es ARGENTINO: Entre 1 y 89999999 
+        /// Si es EXTRANJERO: Entre 90000000 y 99999999 
+        /// </summary>
+        /// <param name="nacionalidad">Nacionalidad de la persona.</param>
+        /// <param name="dato">DNI de la persona(INT).</param>
+        /// <returns>DNI valido(INT).</returns>
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
             if (dato < 1 || dato > 99999999)
@@ -112,6 +138,14 @@ namespace EntidadesAbstractas
             return dato;
         }
 
+        /// <summary>
+        /// Valida DNI segun nacionalidad
+        /// Si es ARGENTINO: Entre 1 y 89999999 
+        /// Si es EXTRANJERO: Entre 90000000 y 99999999 
+        /// </summary>
+        /// <param name="nacionalidad">Nacionalidad de la persona.</param>
+        /// <param name="dato">DNI de la persona(STRING).</param>
+        /// <returns>DNI valido(INT).</returns>
         private int ValidarDni(ENacionalidad nacionalidad, string dato)
         {
             int dniEntero;
@@ -127,6 +161,11 @@ namespace EntidadesAbstractas
             return ValidarDni(nacionalidad, dniEntero);
         }
 
+        /// <summary>
+        /// Valida que el apellido/nombre sea sólo letras, con opción de poner un espacio seguido de un segundo apellido/nombre. 
+        /// </summary>
+        /// <param name="dato">Nombre/Apellido a validar</param>
+        /// <returns>Apellido/nombre validado o cadena vacía.</returns>
         private string ValidarNombreApellido(string dato)
         {
             string retorno = "";

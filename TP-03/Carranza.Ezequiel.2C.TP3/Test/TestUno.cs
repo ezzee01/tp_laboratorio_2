@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace TestUnitarios
 {
     [TestClass]
-    public class UnitTest1
+    public class TestUno
     {
         [TestMethod]
         public void DniInvalidoExceptionTest()

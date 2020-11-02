@@ -10,7 +10,7 @@ namespace EntidadesAbstractas
     {
         private int legajo;
 
-        //Constructores
+        /***CONSTRUCTORES***/
 
         public Universitario()
         { }
@@ -20,8 +20,13 @@ namespace EntidadesAbstractas
             this.legajo = legajo;
         }
 
-        //Metodos
+        /***METODOS***/
 
+        /// <summary>
+        /// Compara dos objetos tipo Universitario. 
+        /// </summary>
+        /// <param name="obj">Objeto tipo Universitario a comparar. </param>
+        /// <returns>Si su DNI y Legajo son iguales devuelve true, sino false.</returns>
         public override bool Equals(object obj)
         {
             if (!(ReferenceEquals(obj, null)) && obj is Universitario)
@@ -36,6 +41,10 @@ namespace EntidadesAbstractas
             return false;
         }
 
+        /// <summary>
+        /// Retorna datos del universitario.
+        /// </summary>
+        /// <returns>Legajo y datos del universitario(STRING).</returns>
         protected virtual string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -44,16 +53,32 @@ namespace EntidadesAbstractas
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Compara dos objetos tipo Universitario. 
+        /// </summary>
+        /// <param name="pg1">Objeto tipo Universitario a comparar.</param>
+        /// <param name="pg2">Objeto tipo Universitario a comparar.</param>
+        /// <returns>Si su DNI y Legajo son iguales devuelve false, sino true.</returns>
         public static bool operator !=(Universitario pg1, Universitario pg2)
         {
             return !(pg1 == pg2);
         }
 
+        /// <summary>
+        /// Compara dos objetos tipo Universitario. 
+        /// </summary>
+        /// <param name="pg1">Objeto tipo Universitario a comparar.</param>
+        /// <param name="pg2">Objeto tipo Universitario a comparar.</param>
+        /// <returns>Si su DNI y Legajo son iguales devuelve true, sino false.</returns>
         public static bool operator ==(Universitario pg1, Universitario pg2)
         {
             return pg1.Equals(pg2);
         }
 
+        /// <summary>
+        /// Metodo abstracto.
+        /// </summary>
+        /// <returns></returns>
         protected abstract string ParticiparEnClase();
 
 
