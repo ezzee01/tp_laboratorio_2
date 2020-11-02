@@ -50,7 +50,7 @@ namespace ClasesInstanciables
             }
             set
             {
-                if (i>=0 && i< this.jornadas.Count)
+                if (i >= 0 && i < this.jornadas.Count)
                 {
                     this.jornadas[i] = value;
                 }
@@ -120,24 +120,24 @@ namespace ClasesInstanciables
             return Universidad.MostrarDatos(this);
         }
 
-        public static bool operator !=(Universidad g, Alumno a)
+        public static bool operator !=(Universidad u, Alumno a)
         {
-            return !(g == a);
+            return !(u == a);
         }
 
-        public static bool operator !=(Universidad g, Profesor i)
+        public static bool operator !=(Universidad u, Profesor i)
         {
-            return !(g == i);
+            return !(u == i);
         }
 
-        public static bool operator ==(Universidad g, Alumno a)
+        public static bool operator ==(Universidad u, Alumno a)
         {
-            return g.alumnos.Contains(a);
+            return u.alumnos.Contains(a);
         }
 
-        public static bool operator ==(Universidad g, Profesor i)
+        public static bool operator ==(Universidad u, Profesor i)
         {
-            return g.instructores.Contains(i);
+            return u.instructores.Contains(i);
         }
 
         public static Profesor operator !=(Universidad u, EClases clase)
@@ -149,7 +149,7 @@ namespace ClasesInstanciables
         {
             foreach (Profesor item in u.instructores)
             {
-                if (item==clase)
+                if (item == clase)
                 {
                     return item;
                 }
@@ -181,10 +181,8 @@ namespace ClasesInstanciables
                 u.Alumnos.Add(a);
                 return u;
             }
-            else
-            {
-                throw new AlumnoRepetidoException();
-            }
+            throw new AlumnoRepetidoException();
+
         }
 
         public static Universidad operator +(Universidad u, Profesor i)

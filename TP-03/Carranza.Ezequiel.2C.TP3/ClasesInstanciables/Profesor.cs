@@ -101,17 +101,15 @@ namespace ClasesInstanciables
         /// <returns>Devuelve true si el profesor da la clase, sino false.</returns>
         public static bool operator ==(Profesor i, Universidad.EClases clase)
         {
-            bool retorno = false;
 
             foreach (Universidad.EClases clas in i.clasesDelDia)
             {
                 if (clas == clase)
                 {
-                    retorno = true;
-                    break;
+                    return true;
                 }
             }
-            return retorno;
+            return false;
         }
 
     }
