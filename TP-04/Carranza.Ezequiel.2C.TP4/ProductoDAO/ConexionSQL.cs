@@ -44,40 +44,40 @@ namespace ProductoDAO
             }
         }
 
-        public List<Producto> ListarProductos()
-        {
-            using (SqlConnection sqlConnection = new SqlConnection(this.connectionString))
-            {
-                string command = "SELECT * FROM Productos";
+        //public List<Producto> ListarProductos()
+        //{
+        //    using (SqlConnection sqlConnection = new SqlConnection(this.connectionString))
+        //    {
+        //        string command = "SELECT * FROM Productos";
 
-                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
-                sqlConnection.Open();
+        //        SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+        //        sqlConnection.Open();
 
-                SqlDataReader reader = sqlCommand.ExecuteReader();
+        //        SqlDataReader reader = sqlCommand.ExecuteReader();
 
-                List<Producto> productos = new List<Producto>();
+        //        List<Producto> productos = new List<Producto>();
 
-                while (reader.Read())
-                {
-                    int id = (int)reader["id"];
-                    string nombreDeProducto = (string)reader["NombreDeProducto"];
-                    string codigo = (string)reader["Codigo"];
+        //        while (reader.Read())
+        //        {
+        //            int id = (int)reader["id"];
+        //            string nombreDeProducto = (string)reader["NombreDeProducto"];
+        //            string codigo = (string)reader["Codigo"];
 
-                    string descripcion = null;
+        //            string descripcion = null;
 
-                    if (reader["Descripcion"] != DBNull.Value)
-                    {
-                        descripcion = (string)reader["Descripcion"];
-                    }
+        //            if (reader["Descripcion"] != DBNull.Value)
+        //            {
+        //                descripcion = (string)reader["Descripcion"];
+        //            }
 
-                    int precio = (int)reader["Precio"];
+        //            int precio = (int)reader["Precio"];
 
-                    Producto producto = new Producto(nombreDeProducto, descripcion, codigo, precio);
-                    productos.Add(producto);
-                }
+        //            //Producto producto = new Producto(nombreDeProducto, descripcion, codigo, precio);
+        //            productos.Add(producto);
+        //        }
 
-                return productos;
-            }
-        }
+        //        return productos;
+        //    }
+        //}
     }
 }

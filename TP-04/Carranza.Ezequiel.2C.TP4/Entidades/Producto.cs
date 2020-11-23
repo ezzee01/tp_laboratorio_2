@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Producto : IMostrar<Producto>
+    public  class Producto : IMostrar<Producto>
     {
         private string nombreProducto;
         private string descripcion;
