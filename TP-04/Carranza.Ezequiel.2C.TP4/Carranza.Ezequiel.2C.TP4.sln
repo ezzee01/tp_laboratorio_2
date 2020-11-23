@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 15 for Windows Desktop
+VisualStudioVersion = 15.0.28307.1259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{ED484091-603B-477F-9909-BC55F84C322A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductoDAO", "ProductoDAO\ProductoDAO.csproj", "{1BED1760-BEF5-454E-A72D-80F57710065C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED484091-603B-477F-9909-BC55F84C322A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED484091-603B-477F-9909-BC55F84C322A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED484091-603B-477F-9909-BC55F84C322A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED484091-603B-477F-9909-BC55F84C322A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BED1760-BEF5-454E-A72D-80F57710065C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BED1760-BEF5-454E-A72D-80F57710065C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BED1760-BEF5-454E-A72D-80F57710065C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BED1760-BEF5-454E-A72D-80F57710065C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6159BC27-698F-4623-9FE0-406E7DABE8EB}
+	EndGlobalSection
+EndGlobal
